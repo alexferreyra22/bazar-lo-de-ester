@@ -1,13 +1,160 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mi-proyecto-vite</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bazar lo de Ester: productos, lavado de frazadas y acolchados, service de celulares y electrodomésticos e impresiones.">
+  <meta name="theme-color" content="#184e49">
+  <title>Bazar lo de Ester | Productos y servicios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css"></head>
+<body>
+  <div class="topbar">Productos, servicios y atención cercana · ¡Consultanos!</div>
+  
+<header class="header">
+  <a href="#inicio" class="logo" aria-label="Bazar lo de Ester, inicio">
+    <img
+      src="./logo-bazar.jpeg"
+      alt="Logo Bazar lo de Ester"
+      class="logo-image"
+    >
+  </a>
+
+  <nav class="nav" id="nav">
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#lavado">Lavado</a>
+    <a href="#service">Service técnico</a>
+    <a href="#servicios">Otros servicios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+    ☰
+  </button>
+
+  <a
+    class="button button-green header-whatsapp"
+    href="https://wa.me/543794662177"
+    target="_blank"
+    rel="noopener"
+  >
+    Consultar por WhatsApp ↗
+  </a>
+</header>
+
+
+  <main>
+    <section class="hero reveal" id="inicio">
+      <div class="hero-content">
+        <span class="eyebrow">BIENVENIDOS A NUESTRO ESPACIO</span>
+        <h1>Todo lo que necesitás, <span>en un solo lugar.</span></h1>
+        <p>Encontrá productos para todos los días y servicios para ayudarte: lavado de frazadas y acolchados, service de celulares y electrodomésticos e impresiones.</p>
+        <div class="hero-actions"><a href="#productos" class="button button-primary">Ver productos ↓</a><a href="#servicios" class="button button-outline">Conocer servicios</a></div>
+        <div class="hero-note"><span class="check">✓</span> Consultá precios, disponibilidad y turnos directamente por WhatsApp.</div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1000&q=85" alt="Botellas reutilizables" onerror="this.style.display='none'">
+        <div class="floating-card"><span class="floating-icon">✦</span><div><strong>Bazar lo de Ester</strong><small>¡Gracias por visitarnos!</small></div></div>
+      </div>
+    </section>
+
+    <section class="benefits reveal" aria-label="Nuestros servicios destacados">
+      <a class="benefit" href="#productos"><span class="benefit-icon">◇</span><div><strong>Productos variados</strong><small>Opciones para todos los días</small></div></a>
+      <a class="benefit" href="#lavado"><span class="benefit-icon">✧</span><div><strong>Lavado de frazadas</strong><small>Frescura para tu hogar</small></div></a>
+      <a class="benefit" href="#service"><span class="benefit-icon">⚙</span><div><strong>Service técnico</strong><small>Celulares y electrodomésticos</small></div></a>
+      <a class="benefit" href="#servicios"><span class="benefit-icon">▤</span><div><strong>Impresiones</strong><small>Consultá por tus trabajos</small></div></a>
+    </section>
+
+    <section class="section reveal" id="productos">
+      <div class="section-heading">
+        <div><span class="eyebrow">NUESTRO CATÁLOGO</span><h2>Productos destacados</h2><p>Explorá los productos y consultanos por precios, modelos y disponibilidad.</p></div>
+        <a href="#contacto" class="text-link">¿Buscás otra cosa? →</a>
+      </div>
+      <div class="catalog-controls">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar productos..." aria-label="Buscar productos"></label>
+        <div class="filters" id="filters">
+          <button class="filter active" data-category="Todos">Todos</button><button class="filter" data-category="Botellas, mates y termos">Botellas, mates y termos</button><button class="filter" data-category="Tecnología">Tecnología</button><button class="filter" data-category="Accesorios">Accesorios</button>
+        </div>
+      </div>
+      <div class="products-grid" id="productsGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>No encontramos productos con esa búsqueda. Probá con otro nombre o categoría.</p>
+      <p class="catalog-note">Las imágenes son ilustrativas. Consultá por WhatsApp el precio, los modelos y la disponibilidad de cada artículo.</p>
+    </section>
+
+    <section class="feature-section laundry reveal" id="lavado">
+      <div class="feature-copy">
+        <span class="eyebrow">CUIDAMOS LA FRESCURA DE TU HOGAR</span>
+        <h2>¡Lavamos <span>frazadas y acolchados!</span></h2>
+        <p>Dejá tus frazadas y acolchados listos para volver a disfrutar de una cama fresca y acogedora. Escribinos para consultar precios, condiciones y disponibilidad.</p>
+        <a class="button button-white" href="https://wa.me/543794662177?text=Hola%2C%20quisiera%20consultar%20por%20el%20lavado%20de%20frazadas%20y%20acolchados%20en%20Bazar%20lo%20de%20Ester." target="_blank" rel="noopener">Consultar por lavado ↗</a>
+      
+<div class="clima-lavado" id="clima-lavado">
+  <div class="clima-icono" id="clima-icono">🌤️</div>
+  <div class="clima-info">
+    <span class="clima-ciudad">CLIMA EN CORRIENTES</span>
+    <div class="clima-temperatura" id="clima-temperatura">--°C</div>
+    <p id="clima-descripcion">Consultando el clima...</p>
+    <small id="clima-consejo">Un consejo para el lavado</small>
+  </div>
+  <div class="clima-extra">
+    <span>🌧️ Lluvia</span>
+    <strong id="clima-lluvia">--%</strong>
+  </div>
+</div>
+</div>
+      <div class="laundry-art" aria-hidden="true">
+        <div class="laundry-spark spark-a">✦</div><div class="laundry-spark spark-b">✧</div>
+        <div class="laundry-bubble bubble-a"></div><div class="laundry-bubble bubble-b"></div><div class="laundry-bubble bubble-c"></div>
+        <div class="blanket"><div class="blanket-fold"></div><div class="blanket-line"></div><div class="blanket-line line-two"></div></div>
+        <div class="laundry-cloud cloud-one"></div><div class="laundry-cloud cloud-two"></div>
+        <div class="art-caption">Suave · Fresco · Limpio</div>
+      </div>
+    </section>
+
+    <section class="feature-section repair reveal" id="service">
+      <div class="repair-art" aria-hidden="true">
+        <div class="repair-glow"></div>
+        <div class="repair-orbit orbit-one"></div><div class="repair-orbit orbit-two"></div>
+        <div class="repair-phone"><div class="phone-speaker"></div><div class="phone-screen"><span>✓</span><small>¡Vamos a revisarlo!</small></div><div class="phone-button"></div></div>
+        <div class="tool tool-one">⚙</div><div class="tool tool-two">✦</div><div class="tool tool-three">⌁</div>
+        <div class="art-caption">Celulares y electrodomésticos</div>
+      </div>
+      <div class="feature-copy repair-copy">
+        <span class="eyebrow">SERVICE Y REPARACIONES</span>
+        <h2>¿Algo no funciona? <span>¡Consultanos!</span></h2>
+        <p>Te ayudamos a gestionar la revisión de celulares y electrodomésticos. Contanos qué equipo tenés y cuál es el problema para consultar las opciones de service.</p>
+        <div class="repair-actions">
+          <a class="button button-primary" href="https://wa.me/543794662177?text=Hola%2C%20quisiera%20consultar%20por%20el%20service%20de%20un%20celular." target="_blank" rel="noopener">Service de celulares ↗</a>
+          <a class="button button-outline" href="https://wa.me/543794662177?text=Hola%2C%20quisiera%20consultar%20por%20el%20service%20de%20un%20electrodom%C3%A9stico." target="_blank" rel="noopener">Electrodomésticos ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services-section reveal" id="servicios">
+      <div class="section-heading centered"><span class="eyebrow">TAMBIÉN TE AYUDAMOS CON...</span><h2>Servicios para todos los días</h2><p>Escribinos para consultar requisitos, precios y disponibilidad.</p></div>
+      <div class="services-grid">
+        <article class="service-card"><div class="service-icon icon-blue">▤</div><h3>Impresiones personalizadas</h3><p>Impresiones en papel sticker, papel fotográfico y otros tipos de papel. Consultá por tu idea o diseño.</p><button class="service-link" data-service="Impresiones personalizadas en papel sticker, fotográfico y otros">Consultar servicio →</button></article>
+        <article class="service-card"><div class="service-icon icon-orange">⚙</div><h3>Service de electrodomésticos</h3><p>Contanos qué equipo necesitás revisar y consultá por las opciones de reparación.</p><button class="service-link" data-service="Service de electrodomésticos">Consultar servicio →</button></article>
+        <article class="service-card"><div class="service-icon icon-green">▣</div><h3>Service de celulares</h3><p>Escribinos para contarnos qué problema tiene tu celular y consultar por el service.</p><button class="service-link" data-service="Service de celulares">Consultar servicio →</button></article>
+        <article class="service-card"><div class="service-icon icon-purple">✧</div><h3>Lavado de frazadas y acolchados</h3><p>Consultá por el lavado, precios y disponibilidad del servicio.</p><button class="service-link" data-service="Lavado de frazadas y acolchados">Consultar servicio →</button></article>
+      </div>
+      <p class="service-disclaimer">Los servicios están sujetos a evaluación y disponibilidad. Consultá previamente las condiciones de cada trabajo.</p>
+    </section>
+
+    <section class="contact-section reveal" id="contacto">
+      <div><span class="eyebrow">ESTAMOS PARA AYUDARTE</span><h2>¿Tenés alguna consulta?</h2><p>Escribinos por WhatsApp para preguntar por productos, precios, service técnico, lavado de frazadas o impresiones.</p></div>
+      <a class="button button-green" href="https://wa.me/543794662177?text=Hola%2C%20vi%20la%20p%C3%A1gina%20web%20de%20Bazar%20lo%20de%20Ester%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">✆ Escribir por WhatsApp</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+<a href="#inicio" class="footer-logo">
+  <img src="./logo-bazar.jpeg" alt="Bazar lo de Ester">
+</a>    <p>Productos, servicios y atención cercana.</p><span class="copyright">© <span id="year"></span> Bazar lo de Ester · Todos los derechos reservados.</span>
+  </footer>
+  <a class="whatsapp-float" href="https://wa.me/543794662177" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">✆</a>
+<script type="module" src="./script.js"></script></body>
 </html>
